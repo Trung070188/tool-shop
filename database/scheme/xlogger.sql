@@ -1,0 +1,22 @@
+CREATE TABLE `xlogger` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(200) DEFAULT NULL,
+  `request_uri` varchar(255) DEFAULT NULL,
+  `http_method` varchar(20) DEFAULT NULL,
+  `http_code` int(4) DEFAULT NULL,
+  `parameters` text DEFAULT NULL,
+  `response` text DEFAULT NULL,
+  `request_headers` text DEFAULT NULL,
+  `response_headers` text DEFAULT NULL,
+  `user_agent` varchar(255) DEFAULT NULL,
+  `ip` varchar(50) DEFAULT NULL,
+  `time` datetime DEFAULT NULL,
+  `event_type` varchar(20) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
+  `exception` varchar(100) DEFAULT NULL,
+  `stack_trace` text DEFAULT NULL,
+  `query` text DEFAULT NULL,
+  `execution_time` double DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `request_uri` (`request_uri`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
